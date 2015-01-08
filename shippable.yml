@@ -3,13 +3,14 @@
 # verify the contents of this file before proceeding
 
 language: python
-
+before_script:
+  mkdir -p shippable/codecoverage shippable/testresults
 python:
  - 2.7
 install:
  - sudo pip install -U . lxml pytest pytest-cov pillow
 script: 
- - py.test --cov-report xml --cov openpyxl --junit-xml=shippable/testresults/results.xml
+ - py.test  --cov-report xml --cov openpyxl --junit-xml=shippable/testresults/results.xml
  
  
 cache: true
