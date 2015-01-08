@@ -12,10 +12,9 @@ script:
 
  #- virtualenv ve
 
- - . ve/bin/activate
+# - . ve/bin/activate
  - sudo apt-get install -y python-dev
  - sudo pip install -U . lxml pytest pytest-cov pillow
-
  - py.test --cov-report xml --cov openpyxl --junit-xml=shippable/testresults/results.xml
  
- cache: true
+cache: true
